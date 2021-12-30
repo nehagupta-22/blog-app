@@ -6,13 +6,13 @@ export const TodoForm = ({ onNewTodo }) => {
   return (
     <form>
         <input
-          placeholder="Enter task"
+          placeholder="New task"
           value={item}
           onChange={event => setItem(event.target.value)}
         />
         <input
           type = "submit"
-          value = "add"
+          value = "Add"
           onClick={async () => {
             const todo = { item };
             await fetch("/add_todo", {

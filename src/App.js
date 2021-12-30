@@ -1,6 +1,7 @@
 import React, { useState, useEffect} from 'react'
 import './App.css';
 import { TodoForm } from './components/TodoForm.js';
+import { Todos } from './components/Todos.js';
 
 function App() {
   const[todoList, setTodoList] = useState([]);
@@ -22,28 +23,10 @@ function App() {
         }
       />
 
-      <div className = "todoList">
-      <h1> Tasks: </h1>
-        <ul>
-          {todoList.map(todo => {
-            return (
-              <li key = {todo.id}
-              onClick = {async () => {
-                await fetch("/delete_todo/" + todo.id, {
-                  method: "DELETE"
-                });
-              fetch('/todos').then(response => response.json())
-              .then(data => {setTodoList(data.todos)})
-              {/* instead of directly using setTodoList (as for add_todo),
-                fetch data from the database because
-                no nice way of deleting element from array in JS*/}
-            }}>
-                {todo.item}
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+      <Todos
+      todo_list = {todoList}
+      set_todo_list = {(data) => setTodoList(data)}
+      />
 
     </div>
   );
