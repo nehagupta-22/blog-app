@@ -1,20 +1,20 @@
-.Homepage {
+.App {
   text-align: center;
   background-color: #E69278;
   font-size: calc(10px + 2vmin);
   color: white;
   font-family: "playfair display", serif;
+
 }
 
 .Main {
-  min-height: 100vh;
+  min-height: 90vh;
   background-image: url("components/images/coverpage.JPG");
+  position: relative;
   align-items: center;
   justify-content: center;
   display: flex;
   flex-direction: column;
-  position: relative;
-  font-family: cursive;
 }
 
 .Main h1 {
@@ -24,6 +24,7 @@
   font-size: 16vh;
   font-weight: normal;
   color: white;
+  font-family: cursive;
 }
 
 .About {
@@ -53,15 +54,11 @@
   background-size: cover;
 }
 
-.Navigation {
-  font-family: "playfair display", serif;
-}
-
 .Button {
   background: transparent;
   border: none;
   font-size: 35px;
-  color: white;
+  color: black;
   position: absolute;
   top: 6vh;
   left: 13vh;
@@ -100,15 +97,90 @@
 .Sidebar ul {
   position: absolute;
   top: 9vh;
-  left: 1vh;
+  left: 2vh;
   list-style-type: none;
 }
 
 .Mood-page {
   min-height: 100vh;
-  text-align: center;
-  background-color: #E69278;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  font-family: "playfair display", serif;
+  background-color: white;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: black;
+}
+
+.Mood-page h1 {
+  padding-top: 4vh;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  font-family: cursive;
+  font-weight: normal;
+  font-size: 2.5em;
+
+}
+
+.Mood-page h2 {
+  margin-top: 40px;
+  margin-left: 30vw;
+  margin-right: 30vw;
+  font-family: cursive;
+  font-weight: normal;
+  font-size: 0.7em;
+}
+
+.Post {
+  border-color: rgb(200,200,200);
+  border-style: solid;
+  border-width: thin;
+  padding: 0px;
+  margin: 3vw;
+  overflow: hidden;
+  width: 60vw;
+  height: 20vw;
+}
+
+.Post-item{
+  position: relative;
+  float: left;
+  padding: 0;
+  margin: 0;
+  width: 50%;
+  height: 100%;
+  justify-content: left;
+}
+
+.Post-image {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  vertical-align: bottom;
+  justify-content: left;
+}
+
+.Post-date {
+  text-align: left;
+  margin-left: 20px;
+  margin-top: 20px;
+  font-size: 0.6em;
+}
+
+.Post-item h3 {
+  margin-left: 20px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-size: 1.1em;
+  text-align: left;
+}
+
+.Info {
+  height: 8vw;
+  margin-left: 20px;
+  margin-right: 10px;
+  font-size: 0.7em;
+  text-align: left;
+  overflow: hidden;
 }
