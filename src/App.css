@@ -1,26 +1,98 @@
 .App {
   text-align: center;
-  background-color: #282c34;
+  background-color: #E69278;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  font-family: "playfair display", serif;
+}
+
+.Home {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  background-image: url("components/coverpage.JPG");
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-family: cursive;
+}
+
+.Home h1 {
+  position: relative;
+  top: -20vh;
+  left: -12vh;
+  font-size: 16vh;
+  font-weight: normal;
   color: white;
 }
 
-div.todoList {
-	text-align: center;
-	}
-
-ul{
-	display: inline-block;
-	text-align: left;
-  list-style-type: none;
-	}
-
-h1 {
-  margin-bottom: 0px;
-  font-size: calc(10px + 3vmin);
+.About {
+  min-height: 20vh;
 }
+
+.About h2 {
+  padding-top: 6vh;
+  font-family: cursive;
+  font-weight: normal;
+}
+
+.About p {
+  padding-right: 40vh;
+  padding-left: 40vh;
+  padding-bottom: 10vh;
+}
+
+.bg-image {
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.Button {
+  background: transparent;
+  border: none;
+  font-size: 35px;
+  color: white;
+  position: absolute;
+  top: 6vh;
+  left: 13vh;
+}
+
+.Button a:hover {
+  font-size: 30px;
+  transition: all 0.1s ease;
+}
+
+.Sidebar {
+    background: rgba(256,256,256, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    display: none;
+}
+
+.Sidebar li a {
+    display: block;
+    padding: 13px 0px;
+    font-size: 23px;
+    text-decoration: none;
+    color: #ce7d64;
+  }
+
+.Sidebar ul {
+  position: absolute;
+  top: 9vh;
+  left: 1vh;
+  list-style-type: none;
+}
+
+.Sidebar ul li a:hover,
+.Sidebar ul li a.active{
+  color: #ffb297;
+  }
