@@ -1,4 +1,4 @@
-.App {
+.Homepage {
   text-align: center;
   background-color: #E69278;
   font-size: calc(10px + 2vmin);
@@ -6,9 +6,9 @@
   font-family: "playfair display", serif;
 }
 
-.Home {
+.Main {
   min-height: 100vh;
-  background-image: url("components/coverpage.JPG");
+  background-image: url("components/images/coverpage.JPG");
   align-items: center;
   justify-content: center;
   display: flex;
@@ -17,7 +17,7 @@
   font-family: cursive;
 }
 
-.Home h1 {
+.Main h1 {
   position: relative;
   top: -20vh;
   left: -12vh;
@@ -40,6 +40,7 @@
   padding-right: 40vh;
   padding-left: 40vh;
   padding-bottom: 10vh;
+  color: white
 }
 
 .bg-image {
@@ -50,6 +51,10 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.Navigation {
+  font-family: "playfair display", serif;
 }
 
 .Button {
@@ -77,12 +82,19 @@
     display: none;
 }
 
-.Sidebar li a {
+.Sidebar li {
     display: block;
     padding: 13px 0px;
     font-size: 23px;
-    text-decoration: none;
-    color: #ce7d64;
+  }
+
+.Sidebar a {
+  color: #ce7d64;
+  text-decoration: none;
+}
+
+.Sidebar a:hover{
+  color: #ffb297;
   }
 
 .Sidebar ul {
@@ -92,7 +104,11 @@
   list-style-type: none;
 }
 
-.Sidebar ul li a:hover,
-.Sidebar ul li a.active{
-  color: #ffb297;
-  }
+.Mood-page {
+  min-height: 100vh;
+  text-align: center;
+  background-color: #E69278;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  font-family: "playfair display", serif;
+}
