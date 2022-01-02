@@ -1,9 +1,12 @@
 from . import db
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 
-class TodoList(db.Model):
-    # Initialize the Column
-    __tablename__ = "TodoList"
+class BlogPosts(db.Model):
+    # Initialize the Columns
+    __tablename__ = "BlogPosts"
     id = db.Column(db.Integer, primary_key=True)
-    item = db.Column(db.String)
+    title=db.Column(db.String(50))
+    content=db.Column(db.Text)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
