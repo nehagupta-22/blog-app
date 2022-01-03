@@ -4,6 +4,11 @@
   font-size: calc(10px + 2vmin);
   font-family: "playfair display", serif;
   color: white;
+  margin: 0;
+}
+
+.Homepage {
+  margin: 0;
 }
 
 .Main {
@@ -27,6 +32,7 @@
 
 .About {
   min-height: 20vh;
+  margin: 0;
 }
 
 .About h2 {
@@ -54,26 +60,29 @@
 .Button {
   background: transparent;
   border: none;
-  font-size: 35px;
+  font-size: 30px;
   position: absolute;
-  top: 6vh;
-  left: 3vw;
+  top: 7px;
+  left: 1.5vw;
   color: white;
+  position: fixed;
 }
 
 .Button a:hover {
-  font-size: 30px;
+  font-size: 25px;
   transition: all 0.1s ease;
+  cursor: pointer;
 }
 
 .Sidebar {
-    background: #e69278;
+    background: rgb(230,146, 120);
     position: absolute;
     top: 0;
     left: 0;
-    width: 250px;
+    width: 210px;
     height: 100vh;
     display: none;
+    margin: 0;
 }
 
 .Sidebar li {
@@ -89,13 +98,30 @@
 
 .Sidebar a:hover{
   color: black;
+  cursor: pointer;
   }
 
 .Sidebar ul {
   position: absolute;
   top: 11vh;
-  left: 2vh;
   list-style-type: none;
+  margin: 0;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 60px;
+  background-color: #e69278;
+  color: white;
+  text-align: left;
+}
+
+.header p {
+  margin-left: 100px;
+  margin-top: 10px;
+  font-family: cursive;
 }
 
 .Mood-page {
@@ -106,16 +132,19 @@
   display: flex;
   flex-direction: column;
   color: black;
+  /*
   border: #e69278;
   border-style: solid;
-  border-width: 8vw;
-  /*border-top-width: 8vh;*/
+  border-width: 6vw;
+  border-top-width: 8vh;
   border-top-width: 0;
   border-bottom-width: 0;
+  */
+  border: 0;
 }
 
 .Mood-page h1 {
-  margin-top: 50px;
+  margin-top: 70px;
   margin-bottom: 0;
   font-family: cursive;
   font-weight: normal;
@@ -125,8 +154,8 @@
 
 .Mood-page h2 {
   margin-top: 30px;
-  margin-left: 20vw;
-  margin-right: 20vw;
+  margin-left: 25vw;
+  margin-right: 25vw;
   font-family: cursive;
   font-weight: normal;
   font-size: 0.7em;
@@ -135,32 +164,28 @@
   padding-bottom: 40px;
 }
 
-.Post {
+.Blurb {
   /*border-color: #ce7d64;*/
   border-style: solid;
   border-width: thin;
-  padding: 0px;
+  border-color: rgb(200, 200, 200);
   margin: 3vw;
-  overflow: hidden;
-  width: 50vw;
-  height: 18vw;
+  width: 65vw;
+  height: 25vw;
+  z-index: -1
 }
 
-.Post-item{
+.Blurb-item{
   position: relative;
   float: left;
-  padding: 0;
-  margin: 0;
   width: 50%;
   height: 100%;
   justify-content: left;
 }
 
-.Post-image {
+.Blurb-image {
   height: 100%;
   width: 100%;
-  padding: 0;
-  margin: 0;
   vertical-align: bottom;
   justify-content: left;
 }
@@ -172,7 +197,7 @@
   font-size: 0.5em;
 }
 
-.Post-item h3 {
+.Blurb-item h3 {
   margin-left: 20px;
   margin-top: 30px;
   margin-bottom: 20px;
@@ -189,8 +214,48 @@
   overflow: hidden;
 }
 
-.hr {
-  width: 60%;
-  margin-left: auto;
-  margin-right: auto;
+.Post {
+  display: none;
+  border-style: solid;
+  border-width: thin;
+  border-color: rgb(200, 200, 200);
+  width: 50vw;
+  height: 75vh;
+  overflow: scroll;
+  position: fixed;
+  left: 25vw;
+  top: 12vh;
+  background-color: white;
+  z-index: 1;
 }
+
+.Post-image {
+  width: 100%;
+  height: auto;
+}
+
+.Content {
+  font-size: 0.7em;
+  margin: 20px;
+  margin-bottom: 0;
+}
+
+.Close-button {
+  position: absolute;
+  top: 1vh;
+  left: 45vw;
+  background-color: transparent;
+  border-width: 0;
+  font-size: 1.5em;
+}
+
+.Close-button a:hover {
+  font-size: 0.8em;
+  transition: all 0.1s ease;
+  cursor: pointer;
+}
+
+.Blurb a:hover{
+  color: #db623d;
+  cursor: pointer;
+  }

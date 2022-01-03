@@ -1,5 +1,4 @@
 import React, { useState, useEffect} from 'react'
-import './moods.css';
 import '../App.css'
 
 function Home () {

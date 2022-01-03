@@ -23,13 +23,14 @@ function App() {
   return (
 
     <Router>
-    <div className="App">
+    <div className="App" >
         <Routes>
             <Route exact path='/' element={< Home/>}></Route>
             <Route exact path='/grumpy' element={< Page />}></Route>
         </Routes>
-
+        <div className = "Sidebar-container">
         <Sidebar />
+        </div>
     </div>
     </Router>
   );

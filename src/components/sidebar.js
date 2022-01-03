@@ -7,7 +7,6 @@ function Sidebar () {
   function open() {
     document.getElementById("mySidebar").style.display = "block";
     document.getElementById("Hamburger").style.display = "none";
-    console.log('yay')
   }
 
   function close() {
@@ -22,7 +21,7 @@ function Sidebar () {
        </button>
 
        <div className = "Sidebar" id = "mySidebar">
-       <button className = "Button" onClick = {close}> &times; </button>
+       <button className = "Button" onClick = {close}> <a> &times; </a></button>
        <ul>
            <li><Link to = "/grumpy" onClick = {close}>grumpy me</Link></li>
        </ul>
