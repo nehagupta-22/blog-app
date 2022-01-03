@@ -1,14 +1,13 @@
 .App {
   text-align: center;
-  background-color: #E69278;
+  background-color: #e69278;
   font-size: calc(10px + 2vmin);
-  color: white;
   font-family: "playfair display", serif;
-
+  color: white;
 }
 
 .Main {
-  min-height: 90vh;
+  min-height: 100vh;
   background-image: url("components/images/coverpage.JPG");
   position: relative;
   align-items: center;
@@ -23,7 +22,6 @@
   left: -12vh;
   font-size: 16vh;
   font-weight: normal;
-  color: white;
   font-family: cursive;
 }
 
@@ -41,7 +39,6 @@
   padding-right: 40vh;
   padding-left: 40vh;
   padding-bottom: 10vh;
-  color: white
 }
 
 .bg-image {
@@ -58,10 +55,10 @@
   background: transparent;
   border: none;
   font-size: 35px;
-  color: black;
   position: absolute;
   top: 6vh;
-  left: 13vh;
+  left: 3vw;
+  color: white;
 }
 
 .Button a:hover {
@@ -70,7 +67,7 @@
 }
 
 .Sidebar {
-    background: rgba(256,256,256, 0.6);
+    background: #e69278;
     position: absolute;
     top: 0;
     left: 0;
@@ -86,23 +83,22 @@
   }
 
 .Sidebar a {
-  color: #ce7d64;
+  color: white;
   text-decoration: none;
 }
 
 .Sidebar a:hover{
-  color: #ffb297;
+  color: black;
   }
 
 .Sidebar ul {
   position: absolute;
-  top: 9vh;
+  top: 11vh;
   left: 2vh;
   list-style-type: none;
 }
 
 .Mood-page {
-  min-height: 100vh;
   background-color: white;
   position: relative;
   align-items: center;
@@ -110,36 +106,44 @@
   display: flex;
   flex-direction: column;
   color: black;
+  border: #e69278;
+  border-style: solid;
+  border-width: 8vw;
+  /*border-top-width: 8vh;*/
+  border-top-width: 0;
+  border-bottom-width: 0;
 }
 
 .Mood-page h1 {
-  padding-top: 4vh;
-  padding-bottom: 0;
+  margin-top: 50px;
   margin-bottom: 0;
   font-family: cursive;
   font-weight: normal;
-  font-size: 2.5em;
-
+  font-size: 2.8em;
+  /*color: #ba593b;*/
 }
 
 .Mood-page h2 {
-  margin-top: 40px;
-  margin-left: 30vw;
-  margin-right: 30vw;
+  margin-top: 30px;
+  margin-left: 20vw;
+  margin-right: 20vw;
   font-family: cursive;
   font-weight: normal;
   font-size: 0.7em;
+  border-bottom-style: solid;
+  border-bottom-width: thin;
+  padding-bottom: 40px;
 }
 
 .Post {
-  border-color: rgb(200,200,200);
+  /*border-color: #ce7d64;*/
   border-style: solid;
   border-width: thin;
   padding: 0px;
   margin: 3vw;
   overflow: hidden;
-  width: 60vw;
-  height: 20vw;
+  width: 50vw;
+  height: 18vw;
 }
 
 .Post-item{
@@ -165,22 +169,28 @@
   text-align: left;
   margin-left: 20px;
   margin-top: 20px;
-  font-size: 0.6em;
+  font-size: 0.5em;
 }
 
 .Post-item h3 {
   margin-left: 20px;
   margin-top: 30px;
   margin-bottom: 20px;
-  font-size: 1.1em;
+  font-size: 0.9em;
   text-align: left;
 }
 
 .Info {
-  height: 8vw;
+  height: 7em;
   margin-left: 20px;
   margin-right: 10px;
-  font-size: 0.7em;
+  font-size: 0.6em;
   text-align: left;
   overflow: hidden;
+}
+
+.hr {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
 }

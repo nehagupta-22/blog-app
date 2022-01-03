@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react'
 import '../App.css';
-import yay from "../components/images/yay.JPG"
+import yay from "../components/images/yay.jpg"
 import Neha from "../components/images/Neha.jpg"
 import DSC02878 from "../components/images/DSC02878.jpg"
 
@@ -11,6 +11,8 @@ function Page() {
     <div className = "Mood-page">
     <h1> grumpy me </h1>
     <h2> psum dolor sit amet, consectetur adipiscing elit. Mauris dapibus, augue a facilisis efficitur, justo arcu hendrerit arcu, a dapibu. </h2>
+
+    <hr/>
 
     <div className= "Post">
        <div className = "Post-item">
