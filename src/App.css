@@ -76,7 +76,7 @@
 
 .Sidebar {
     background: rgb(230,146, 120);
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 210px;
@@ -108,7 +108,7 @@
   margin: 0;
 }
 
-.header {
+.Header {
   position: fixed;
   top: 0;
   width: 100vw;
@@ -118,7 +118,7 @@
   text-align: left;
 }
 
-.header p {
+.Header p {
   margin-left: 100px;
   margin-top: 10px;
   font-family: cursive;
@@ -154,8 +154,9 @@
 
 .Mood-page h2 {
   margin-top: 30px;
-  margin-left: 25vw;
-  margin-right: 25vw;
+  margin-left: 22vw;
+  margin-right: 22vw;
+  margin-bottom: 0;
   font-family: cursive;
   font-weight: normal;
   font-size: 0.7em;
@@ -164,14 +165,18 @@
   padding-bottom: 40px;
 }
 
+.Post {
+  margin: 10vh;
+}
+
 .Blurb {
   /*border-color: #ce7d64;*/
   border-style: solid;
   border-width: thin;
   border-color: rgb(200, 200, 200);
   margin: 3vw;
-  width: 65vw;
-  height: 25vw;
+  width: 70vw;
+  height: 27vw;
   z-index: -1
 }
 
@@ -214,7 +219,7 @@
   overflow: hidden;
 }
 
-.Post {
+.Expanded-Post {
   display: none;
   border-style: solid;
   border-width: thin;
@@ -225,7 +230,7 @@
   position: fixed;
   left: 25vw;
   top: 12vh;
-  background-color: white;
+  background-color: #ffdcd0;
   z-index: 1;
 }
 

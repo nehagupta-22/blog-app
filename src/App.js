@@ -26,7 +26,17 @@ function App() {
     <div className="App" >
         <Routes>
             <Route exact path='/' element={< Home/>}></Route>
-            <Route exact path='/grumpy' element={< Page />}></Route>
+            <Route
+            exact
+            path='/grumpy'
+            element={
+              <Page
+              post_list = {posts}
+              set_post_list = {setPosts}
+              />
+            }
+            >
+            </Route>
         </Routes>
         <div className = "Sidebar-container">
         <Sidebar />
