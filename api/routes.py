@@ -10,15 +10,27 @@ def get_all_posts():
     posts = []
 
     for post in post_list:
-        posts.append({'title': post.title, 'content':post.content, 'date-time':post.created_at})
+        posts.append({
+        'id': post.id,
+        'mood': post.mood,
+        'title': post.title,
+        'content':post.content,
+        'date-time':post.created_at,
+        'feature_image': post.feature_image})
         # serialised_posts is a list of dictionaries
 
     return jsonify({'posts': posts})
 
 @main.route('/blog-post/<int:id>')
-def get_posts(id):
+def get_post(id):
     post = BlogPosts.query.filter_by(id=id).first()
-    serialised_post = {'title': post.title, 'content':post.content, 'date-time':post.created_at}
+    serialised_post = {
+    'id': post.id,
+    'mood': post.mood,
+    'title': post.title,
+    'content':post.content,
+    'date-time':post.created_at,
+    'feature_image': post.feature_image}
     #serialised_post is a dictionary
 
     return jsonify({'post': serialised_post})
@@ -27,7 +39,12 @@ def get_posts(id):
 def add_post():
     post_data = request.get_json()
 
-    new_post = BlogPosts(title=post_data['title'], content=post_data['content'])
+    new_post = BlogPosts(
+    mood = post_data['mood'],
+    title=post_data['title'],
+    content=post_data['content'],
+    feature_image = post_data['feature_image']
+    )
 
     db.session.add(new_post)
     db.session.commit()
@@ -47,8 +64,10 @@ def update_post(id):
 
     post = BlogPosts.query.filter_by(id=id).first()
 
+    post.mood = post_data['mood'],
     post.title = post_data['title']
     post.content = post_data['content']
-
+    post.feature_image = post_data['feature_image']
+    
     db.session.commit()
     return jsonify("Post was updated"),200
