@@ -22,9 +22,7 @@ function Posts ({posts_list, set_posts_list, mood}) {
 
   return (
     <div>
-    <div> hi </div>
     {posts_list.map(post => {
-      return (<div> sksks </div>)
       const postID = String(post.id);
       if (post.mood == mood){
 
