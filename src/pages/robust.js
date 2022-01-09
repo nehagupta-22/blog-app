@@ -1,24 +1,26 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect} from 'react'
+import '../App.css';
 import { Posts } from "../components/posts.js"
-import Header from "../components/header"
+import Header from "../components/header.js"
 
-function Grumpy({post_list, set_post_list}) {
+function Robust({post_list, set_post_list}) {
 
   return(
     <div className = "Mood-page">
-       <h1> grumpy me </h1>
+       <h1> robust me </h1>
        <h2> psum dolor sit amet, consectetur adipiscing elit. </h2>
 
        <Posts
        posts_list = {post_list}
        set_posts_list = {(data) => set_post_list(data)}
-       mood = "grumpy"
+       mood = "robust"
        />
 
-       <Header/>
+        <Header />
+
    </div>
 
   )
 }
 
-export default Grumpy;
+export default Robust;

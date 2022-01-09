@@ -43,7 +43,7 @@ def add_post():
     mood = post_data['mood'],
     title=post_data['title'],
     content=post_data['content'],
-    feature_image = post_data['feature_image']
+    feature_image = post_data['feature_image'].read()
     )
 
     db.session.add(new_post)
@@ -68,6 +68,6 @@ def update_post(id):
     post.title = post_data['title']
     post.content = post_data['content']
     post.feature_image = post_data['feature_image']
-    
+
     db.session.commit()
     return jsonify("Post was updated"),200

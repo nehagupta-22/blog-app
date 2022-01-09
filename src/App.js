@@ -6,9 +6,11 @@ import {
     Route,
     Link
 } from 'react-router-dom';
-import Page from './pages/grumpy';
+import Grumpy from './pages/grumpy';
+import Robust from './pages/robust';
 import Home from './pages'
 import Sidebar from './components/sidebar'
+import { AddPost } from './pages/proliferous'
 
 function App() {
   const[posts, setPosts] = useState([]);
@@ -26,17 +28,22 @@ function App() {
     <div className="App" >
         <Routes>
             <Route exact path='/' element={< Home/>}></Route>
-            <Route
-            exact
-            path='/grumpy'
-            element={
-              <Page
-              post_list = {posts}
-              set_post_list = {setPosts}
-              />
-            }
-            >
+
+            <Route exact path='/grumpy'
+            element={<Grumpy post_list = {posts} set_post_list = {setPosts}/>}>
             </Route>
+
+            <Route exact path='/robust'
+            element={<Robust post_list = {posts} set_post_list = {setPosts}/>}>
+            </Route>
+
+            <Route exact path='/proliferous'
+            element = {<AddPost
+              onNewPost = {post =>
+                setPosts((currentPosts => [post, ...currentPosts]))}/>
+              }>
+            </Route>
+
         </Routes>
         <div className = "Sidebar-container">
         <Sidebar />

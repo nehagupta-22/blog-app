@@ -24,6 +24,8 @@ function Sidebar () {
        <button className = "Button" onClick = {close}> <a> &times; </a></button>
        <ul>
            <li><Link to = "/grumpy" onClick = {close}>grumpy me</Link></li>
+           <li><Link to = "/robust" onClick = {close}>robust me</Link></li>
+           <li><Link to = "/proliferous" onClick = {close}>proliferous me</Link></li>
        </ul>
     </div>
   </div>

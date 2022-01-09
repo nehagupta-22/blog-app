@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import yay from "./images/yay.jpg"
-import '../App.css';
+import yay from "../components/images/Neha.jpg"
 
 export const Posts = ({posts_list, set_posts_list, mood}) => {
 
@@ -25,7 +24,7 @@ export const Posts = ({posts_list, set_posts_list, mood}) => {
     <div>
     {posts_list.map(post => {
       const postID = String(post.id);
-      if (String(post.mood) == "grumpy"){
+      if (post.mood == mood){
 
       return (
         <div className = "Post" key = {post.id}>

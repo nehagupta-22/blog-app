@@ -118,10 +118,17 @@
   text-align: left;
 }
 
-.Header p {
-  margin-left: 100px;
-  margin-top: 10px;
+.Header a {
+  position: fixed;
+  left: 100px;
+  top: 10px;
   font-family: cursive;
+  text-decoration: none;
+  color: white;
+}
+
+.Header a:hover {
+  color: black;
 }
 
 .Mood-page {
@@ -264,3 +271,22 @@
   color: #db623d;
   cursor: pointer;
   }
+
+.Mood-page form {
+  margin-top: 5vh;
+  font-size: 0.7em;
+  text-align: left;
+}
+
+.Field {
+  margin: 2vh;
+}
+
+.Field label {
+   display: block;
+}
+
+.Field input {
+  border-color: #e69278;
+  border-style: solid;
+}
