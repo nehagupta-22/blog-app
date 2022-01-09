@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import yay from "../components/images/Neha.jpg"
 
-export const Posts = ({posts_list, set_posts_list, mood}) => {
+function Posts ({posts_list, set_posts_list, mood}) {
 
   const [blurbOpacity, setBlurbOpacity] = useState(1);
   const [postOpened, setPostOpened] = useState(false);
@@ -22,6 +22,7 @@ export const Posts = ({posts_list, set_posts_list, mood}) => {
 
   return (
     <div>
+    <div> hi </div>
     {posts_list.map(post => {
       const postID = String(post.id);
       if (post.mood == mood){
@@ -60,3 +61,5 @@ export const Posts = ({posts_list, set_posts_list, mood}) => {
         })}
       </div>)
     }
+
+    export default Posts;

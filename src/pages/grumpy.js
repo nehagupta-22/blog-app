@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Posts } from "../components/posts.js"
+import Posts from "../components/posts.js"
 import Header from "../components/header"
 
 function Grumpy({post_list, set_post_list}) {

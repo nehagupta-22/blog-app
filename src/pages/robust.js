@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react'
 import '../App.css';
-import { Posts } from "../components/posts.js"
+import Posts from "../components/posts.js"
 import Header from "../components/header.js"
 
 function Robust({post_list, set_post_list}) {
