@@ -18,7 +18,7 @@ function App() {
   // and the initial input to Todos is the initial state
 
   useEffect(() => {
-    fetch(' https://moodyme-blog.herokuapp.com/blog-posts').then(response => response.json())
+    fetch('/blog-posts').then(response => response.json())
     .then(data => {setPosts(data.posts)})
   }, []);
 

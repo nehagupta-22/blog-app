@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Posts from "../components/posts.js"
 import Header from "../components/header"
 

@@ -43,7 +43,7 @@ def add_post():
     mood = post_data['mood'],
     title=post_data['title'],
     content=post_data['content'],
-    feature_image = post_data['feature_image'].read()
+    feature_image = post_data['feature_image']
     )
 
     db.session.add(new_post)

@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import Header from "../components/header"
-import axios from 'axios';
 
 export const AddPost = ({ onNewPost }) => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [mood, setMood] = useState("");
-  const [featureImage, setImage] = useState(null);
-  const [isFilePicked, setIsFilePicked] = useState(false);
+  const [feature_image, setImage] = useState("");
 
   return (
     <div className = "Mood-page">
@@ -43,12 +41,8 @@ export const AddPost = ({ onNewPost }) => {
         <div className = "Field">
         <label> Feature Image: </label>
         <input
-          type = "file"
-          accept= "image/png, image/jpeg"
-          onChange = {event => {
-            setImage(event.target.files[0]);
-            setIsFilePicked(true)}
-          }
+          value = {feature_image}
+          onChange = {event => setImage(event.target.value)}
         />
         </div>
 
@@ -57,10 +51,14 @@ export const AddPost = ({ onNewPost }) => {
           type = "submit"
           value = "Add Post"
           onClick= {async () => {
-            const formData = new FormData();
-            formData.append('feature_image', featureImage, featureImage.name);
-            console.log(featureImage);
-            axios.post("add_post", formData);
+            const post = { title, content, mood, feature_image };
+            const response = await fetch("/add_post", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify(post)
+            });
     }}
         />
         </div>
