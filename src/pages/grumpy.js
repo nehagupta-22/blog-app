@@ -8,7 +8,6 @@ function Grumpy({post_list, set_post_list}) {
     <div className = "Mood-page">
        <h1> grumpy me </h1>
        <h2> psum dolor sit amet, consectetur adipiscing elit. </h2>
-       <h3> another try </h3>
 
        <Posts
        posts_list = {post_list}
