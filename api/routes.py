@@ -20,7 +20,7 @@ def register_routes(main):
             'title': post.title,
             'content':post.content,
             'date-time':post.created_at,
-            'feature_image': post.feature_image})
+            'feature_image': post.feature_image.decode("utf-8")})
             # serialised_posts is a list of dictionaries
 
         return jsonify({'posts': posts})
