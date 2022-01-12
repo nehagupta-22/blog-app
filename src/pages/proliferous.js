@@ -5,7 +5,6 @@ export const AddPost = ({ onNewPost }) => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [mood, setMood] = useState("");
-  const [feature_image, setImage] = useState("");
 
   return (
     <div className = "Mood-page">

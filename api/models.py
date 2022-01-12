@@ -11,4 +11,3 @@ class BlogPosts(db.Model):
     title=db.Column(db.String(100))
     content=db.Column(db.Text)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
-    feature_image= db.Column(db.LargeBinary)
