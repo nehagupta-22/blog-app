@@ -1,0 +1,187 @@
+diff --git a/api/__init__.py b/api/__init__.py
+index e936e5d..0e66dcb 100644
+--- a/api/__init__.py
++++ b/api/__init__.py
+@@ -1,16 +1,18 @@
+-from flask import Flask, jsonify
++from flask import Flask, jsonify, send_from_directory
++from flask_cors import CORS
+ from flask_sqlalchemy import SQLAlchemy
+ 
+ db = SQLAlchemy()
+ 
+ def create_app():
+-    app = Flask(__name__)
++    app = Flask(__name__, static_folder='../src/build', static_url_path='')
++    CORS(app)
+     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog-database.db'
+     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+ 
+     db.init_app(app)
+ 
+-    from .routes import main
+-    app.register_blueprint(main)
++    from .routes import register_routes
++    register_routes(app)
+ 
+     return app
+diff --git a/api/routes.py b/api/routes.py
+index c1521f6..31ed342 100644
+--- a/api/routes.py
++++ b/api/routes.py
+@@ -1,73 +1,77 @@
+-from flask import Blueprint, jsonify, request, json
++from flask import jsonify, request, json, send_from_directory
+ from . import db
+ from .models import BlogPosts
+ 
+-main = Blueprint('main', __name__)
++def register_routes(main):
++    @main.route('/')
++    def serve():
++        print(main.static_folder)
++        return send_from_directory(main.static_folder, 'index.html')
+ 
+-@main.route('/blog-posts')
+-def get_all_posts():
+-    post_list = BlogPosts.query.all()
+-    posts = []
++    @main.route('/blog-posts')
++    def get_all_posts():
++        post_list = BlogPosts.query.all()
++        posts = []
+ 
+-    for post in post_list:
+-        posts.append({
++        for post in post_list:
++            posts.append({
++            'id': post.id,
++            'mood': post.mood,
++            'title': post.title,
++            'content':post.content,
++            'date-time':post.created_at,
++            'feature_image': post.feature_image})
++            # serialised_posts is a list of dictionaries
++
++        return jsonify({'posts': posts})
++
++    @main.route('/blog-post/<int:id>')
++    def get_post(id):
++        post = BlogPosts.query.filter_by(id=id).first()
++        serialised_post = {
+         'id': post.id,
+         'mood': post.mood,
+         'title': post.title,
+         'content':post.content,
+         'date-time':post.created_at,
+-        'feature_image': post.feature_image})
+-        # serialised_posts is a list of dictionaries
+-
+-    return jsonify({'posts': posts})
+-
+-@main.route('/blog-post/<int:id>')
+-def get_post(id):
+-    post = BlogPosts.query.filter_by(id=id).first()
+-    serialised_post = {
+-    'id': post.id,
+-    'mood': post.mood,
+-    'title': post.title,
+-    'content':post.content,
+-    'date-time':post.created_at,
+-    'feature_image': post.feature_image}
+-    #serialised_post is a dictionary
++        'feature_image': post.feature_image}
++        #serialised_post is a dictionary
+ 
+-    return jsonify({'post': serialised_post})
++        return jsonify({'post': serialised_post})
+ 
+-@main.route('/add_post', methods=['POST'])
+-def add_post():
+-    post_data = request.get_json()
++    @main.route('/add_post', methods=['POST'])
++    def add_post():
++        post_data = request.get_json()
+ 
+-    new_post = BlogPosts(
+-    mood = post_data['mood'],
+-    title=post_data['title'],
+-    content=post_data['content'],
+-    feature_image = post_data['feature_image']
+-    )
++        new_post = BlogPosts(
++        mood = post_data['mood'],
++        title=post_data['title'],
++        content=post_data['content'],
++        feature_image = post_data['feature_image']
++        )
+ 
+-    db.session.add(new_post)
+-    db.session.commit()
++        db.session.add(new_post)
++        db.session.commit()
+ 
+-    return 'Done', 201
++        return 'Done', 201
+ 
+-@main.route('/delete_post/<int:id>',methods=["DELETE"])
+-def delete_post(id):
+-    post = BlogPosts.query.filter_by(id=id).first()
+-    db.session.delete(post)
+-    db.session.commit()
+-    return jsonify("Post was deleted"),200
++    @main.route('/delete_post/<int:id>',methods=["DELETE"])
++    def delete_post(id):
++        post = BlogPosts.query.filter_by(id=id).first()
++        db.session.delete(post)
++        db.session.commit()
++        return jsonify("Post was deleted"),200
+ 
+-@main.route('/update_post/<int:id>',methods=["PUT"])
+-def update_post(id):
+-    post_data = request.get_json()
++    @main.route('/update_post/<int:id>',methods=["PUT"])
++    def update_post(id):
++        post_data = request.get_json()
+ 
+-    post = BlogPosts.query.filter_by(id=id).first()
++        post = BlogPosts.query.filter_by(id=id).first()
+ 
+-    post.mood = post_data['mood'],
+-    post.title = post_data['title']
+-    post.content = post_data['content']
+-    post.feature_image = post_data['feature_image']
++        post.mood = post_data['mood'],
++        post.title = post_data['title']
++        post.content = post_data['content']
++        post.feature_image = post_data['feature_image']
+ 
+-    db.session.commit()
+-    return jsonify("Post was updated"),200
++        db.session.commit()
++        return jsonify("Post was updated"),200
+diff --git a/app.py b/app.py
+new file mode 100644
+index 0000000..d0299cb
+--- /dev/null
++++ b/app.py
+@@ -0,0 +1,6 @@
++import api
++
++app = api.create_app()
++
++if __name__ == '__main__':
++    app.run(port=5003)
+diff --git a/requirements.txt b/requirements.txt
+index 96e51cc..6229760 100644
+--- a/requirements.txt
++++ b/requirements.txt
+@@ -23,7 +23,7 @@ scandir==1.10.0
+ singledispatch==3.7.0
+ six==1.16.0
+ SQLAlchemy==1.4.28
+-typing==3.10.0.0
++typing==3.7.4
+ virtualenv==20.10.0
+ virtualenv-clone==0.5.7
+ Werkzeug==1.0.1

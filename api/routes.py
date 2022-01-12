@@ -1,73 +1,77 @@
-from flask import Blueprint, jsonify, request, json
+from flask import jsonify, request, json, send_from_directory
 from . import db
 from .models import BlogPosts
 
-main = Blueprint('main', __name__)
+def register_routes(main):
+    @main.route('/')
+    def serve():
+        print(main.static_folder)
+        return send_from_directory(main.static_folder, 'index.html')
 
-@main.route('/blog-posts')
-def get_all_posts():
-    post_list = BlogPosts.query.all()
-    posts = []
+    @main.route('/blog-posts')
+    def get_all_posts():
+        post_list = BlogPosts.query.all()
+        posts = []
 
-    for post in post_list:
-        posts.append({
+        for post in post_list:
+            posts.append({
+            'id': post.id,
+            'mood': post.mood,
+            'title': post.title,
+            'content':post.content,
+            'date-time':post.created_at,
+            'feature_image': post.feature_image})
+            # serialised_posts is a list of dictionaries
+
+        return jsonify({'posts': posts})
+
+    @main.route('/blog-post/<int:id>')
+    def get_post(id):
+        post = BlogPosts.query.filter_by(id=id).first()
+        serialised_post = {
         'id': post.id,
         'mood': post.mood,
         'title': post.title,
         'content':post.content,
         'date-time':post.created_at,
-        'feature_image': post.feature_image})
-        # serialised_posts is a list of dictionaries
+        'feature_image': post.feature_image}
+        #serialised_post is a dictionary
 
-    return jsonify({'posts': posts})
+        return jsonify({'post': serialised_post})
 
-@main.route('/blog-post/<int:id>')
-def get_post(id):
-    post = BlogPosts.query.filter_by(id=id).first()
-    serialised_post = {
-    'id': post.id,
-    'mood': post.mood,
-    'title': post.title,
-    'content':post.content,
-    'date-time':post.created_at,
-    'feature_image': post.feature_image}
-    #serialised_post is a dictionary
+    @main.route('/add_post', methods=['POST'])
+    def add_post():
+        post_data = request.get_json()
 
-    return jsonify({'post': serialised_post})
+        new_post = BlogPosts(
+        mood = post_data['mood'],
+        title=post_data['title'],
+        content=post_data['content'],
+        feature_image = post_data['feature_image']
+        )
 
-@main.route('/add_post', methods=['POST'])
-def add_post():
-    post_data = request.get_json()
+        db.session.add(new_post)
+        db.session.commit()
 
-    new_post = BlogPosts(
-    mood = post_data['mood'],
-    title=post_data['title'],
-    content=post_data['content'],
-    feature_image = post_data['feature_image']
-    )
+        return 'Done', 201
 
-    db.session.add(new_post)
-    db.session.commit()
+    @main.route('/delete_post/<int:id>',methods=["DELETE"])
+    def delete_post(id):
+        post = BlogPosts.query.filter_by(id=id).first()
+        db.session.delete(post)
+        db.session.commit()
+        return jsonify("Post was deleted"),200
 
-    return 'Done', 201
+    @main.route('/update_post/<int:id>',methods=["PUT"])
+    def update_post(id):
+        post_data = request.get_json()
 
-@main.route('/delete_post/<int:id>',methods=["DELETE"])
-def delete_post(id):
-    post = BlogPosts.query.filter_by(id=id).first()
-    db.session.delete(post)
-    db.session.commit()
-    return jsonify("Post was deleted"),200
+        post = BlogPosts.query.filter_by(id=id).first()
 
-@main.route('/update_post/<int:id>',methods=["PUT"])
-def update_post(id):
-    post_data = request.get_json()
+        post.mood = post_data['mood'],
+        post.title = post_data['title']
+        post.content = post_data['content']
+        post.feature_image = post_data['feature_image']
 
-    post = BlogPosts.query.filter_by(id=id).first()
-
-    post.mood = post_data['mood'],
-    post.title = post_data['title']
-    post.content = post_data['content']
-    post.feature_image = post_data['feature_image']
-
-    db.session.commit()
-    return jsonify("Post was updated"),200
+        db.session.commit()
+        return jsonify("Post was updated"),200
