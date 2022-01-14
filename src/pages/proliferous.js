@@ -39,10 +39,10 @@ export const AddPost = ({ onNewPost }) => {
         </div>
 
         <div className = "Field">
-        <label> Feature Image: </label>
+        <label> Feature image: </label>
         <input
-          value = {feature_image}
-          onChange = {event => setImage(event.target.value)}
+          value={feature_image}
+          onChange={event => setImage(event.target.value)}
         />
         </div>
 

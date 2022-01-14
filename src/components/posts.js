@@ -34,7 +34,9 @@ function Posts ({posts_list, set_posts_list, mood}) {
                  onClick = {() => {open_post(postID)}}>
             <a>
                 <div className = "Blurb-item">
-                    <img src = {yay} className = "Blurb-image"/>
+                    <Image
+                    source = {'../components/images/' + post.feature_image + '.jpg'}
+                    className = "Blurb-image"/>
                 </div>
                 <div className = "Blurb-item">
                     <div className = "Post-date"> {post.date} </div>

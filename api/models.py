@@ -8,6 +8,7 @@ class BlogPosts(db.Model):
     __tablename__ = "BlogPosts"
     id = db.Column(db.Integer, primary_key=True)
     mood = db.Column(db.String(100))
-    title=db.Column(db.String(100))
+    title= db.Column(db.String(100))
     content=db.Column(db.Text)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    feature_image = db.Column(db.String(100))
