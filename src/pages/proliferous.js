@@ -52,7 +52,7 @@ export const AddPost = ({ onNewPost }) => {
           value = "Add Post"
           onClick= {async () => {
             const post = { title, content, mood, feature_image };
-            const response = await fetch("/add_post", {
+            await fetch("/add_post", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json"

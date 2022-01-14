@@ -1,11 +1,11 @@
-import React, { useState, useEffect} from 'react'
+import React from 'react'
 import '../App.css'
 
 function Home () {
   return (
     <div className = "Homepage" >
         <div className= "Main bg-image">
-        <h1> moody me </h1>
+        <h1> moody me! </h1>
         </div>
 
        <div className="About">
