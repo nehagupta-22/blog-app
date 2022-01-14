@@ -24,6 +24,7 @@ yarn-error.log*
 
 __pycache__/
 **.pyc
-*.pyc
 
 bin/
+lib/
+pyvenv.cfg
