@@ -5,7 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 def create_app():
-    app = Flask(__name__, static_folder='../src/build', static_url_path='')
+    app = Flask(__name__, static_folder='../build', static_url_path='')
     CORS(app)
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog-database.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
