@@ -9,7 +9,6 @@
 /coverage
 
 # production
-/build
 
 # misc
 .DS_Store
@@ -28,3 +27,4 @@ __pycache__/
 bin/
 lib/
 pyvenv.cfg
+include/
