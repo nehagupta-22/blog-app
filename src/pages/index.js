@@ -5,7 +5,7 @@ function Home () {
   return (
     <div className = "Homepage" >
         <div className= "Main bg-image">
-        <h1> moody me! </h1>
+        <h1> moody me </h1>
         </div>
 
        <div className="About">
