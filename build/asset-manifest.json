@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.384e3c6a.css",
+    "main.js": "/static/js/main.30d22844.js",
+    "static/js/787.4042974c.chunk.js": "/static/js/787.4042974c.chunk.js",
+    "static/media/coverpage.JPG": "/static/media/coverpage.6e806414a555f9c0fc6b.JPG",
+    "static/media/Neha.jpg": "/static/media/Neha.ddd8971fe3fd110f4c85.jpg",
+    "index.html": "/index.html",
+    "main.384e3c6a.css.map": "/static/css/main.384e3c6a.css.map",
+    "main.30d22844.js.map": "/static/js/main.30d22844.js.map",
+    "787.4042974c.chunk.js.map": "/static/js/787.4042974c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.384e3c6a.css",
+    "static/js/main.30d22844.js"
+  ]
+}
