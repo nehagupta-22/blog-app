@@ -29,7 +29,7 @@ function Posts ({posts_list, set_posts_list, mood}) {
       "consumerism": consumerism,
       "exercise": exercise
     }
-    return lookup[image_name]
+    return lookup[image_name];
   }
 
   return (
