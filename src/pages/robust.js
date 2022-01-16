@@ -8,7 +8,7 @@ function Robust({post_list, set_post_list}) {
   return(
     <div className = "Mood-page">
        <h1> robust me </h1>
-       <h2> psum dolor sit amet, consectetur adipiscing elit. </h2>
+       <h2> reflections from jumping onto the fitness bandwagon during quarantine </h2>
 
        <Posts
        posts_list = {post_list}
@@ -16,7 +16,7 @@ function Robust({post_list, set_post_list}) {
        mood = "robust"
        />
 
-        <Header />
+      <Header/>
 
    </div>
 
