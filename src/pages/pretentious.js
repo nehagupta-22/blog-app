@@ -23,4 +23,4 @@ function Pretentious ({post_list, set_post_list}) {
   )
 }
 
-export default Robust;
+export default Pretentious;
