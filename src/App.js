@@ -5,10 +5,12 @@ import {
     Routes,
     Route,
 } from 'react-router-dom';
-import Grumpy from './pages/grumpy';
-import Robust from './pages/robust';
 import Home from './pages'
 import Sidebar from './components/sidebar'
+import Grumpy from './pages/grumpy';
+import Robust from './pages/robust';
+import Pensive from './pages/robust';
+import Pretentious from './pages/pretentious';
 import { AddPost } from './pages/proliferous'
 
 function App() {
@@ -34,6 +36,14 @@ function App() {
 
             <Route exact path='/robust'
             element={<Robust post_list = {posts} set_post_list = {setPosts}/>}>
+            </Route>
+
+            <Route exact path='/pensive'
+            element={<Pensive post_list = {posts} set_post_list = {setPosts}/>}>
+            </Route>
+
+            <Route exact path='/pretentious'
+            element={<Pretentious post_list = {posts} set_post_list = {setPosts}/>}>
             </Route>
 
             <Route exact path='/proliferous'

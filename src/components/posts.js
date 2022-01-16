@@ -28,7 +28,6 @@ function Posts ({posts_list, set_posts_list, mood}) {
     {posts_list.map(post => {
       const postID = String(post.id);
       if (post.mood == mood){
-
       return (
         <div className = "Post" key = {post.id}>
 
@@ -37,7 +36,8 @@ function Posts ({posts_list, set_posts_list, mood}) {
                  onClick = {() => {open_post(postID)}}>
             <a>
                 <div className = "Blurb-item">
-                    <img src = {{post.feature_image}} className = "Blurb-image"/>
+
+                    <img src = {sexism} className = "Blurb-image"/>
                 </div>
                 <div className = "Blurb-item">
                     <div className = "Post-date"> {post.date} </div>

@@ -10,7 +10,7 @@ function Home () {
 
        <div className="About">
         <h2> Hey, I'm Neha! </h2>
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer feugiat bibendum maximus. Fusce eu bibendum arcu. Quisque lobortis malesuada velit, quis ultricies metus fermentum nec. Sed sollicitudin semper luctus. Suspendisse risus mi, condimentum eu venenatis sed, tincidunt quis nulla. Ut venenatis magna quis dui porttitor sollicitudin. Pellentesque vel suscipit diam. Cras tortor magna, eleifend sed placerat vitae, feugiat a sapien.
+        <p> And I’m a moody girl. I flit rapidly between happy, sad and confused, but most often, I stress about my employability prospects—hence this attempt at learning web development. Built using a Flask API, the React.js framework and plenty of love, this baby blog of mine reflects its momma raw and unfiltered. Happy reading!
         </p>
        </div>
   </div>

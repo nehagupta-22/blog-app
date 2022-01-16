@@ -10,7 +10,7 @@ export const AddPost = ({ onNewPost }) => {
   return (
     <div className = "Mood-page">
        <h1> proliferous me </h1>
-       <h2> psum dolor sit amet, consectetur adipiscing elit. </h2>
+       <h2> "And you, be fruitful and multiply, teem on the earth and multiply in it.” </h2>
 
     <form>
 
