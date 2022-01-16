@@ -3,10 +3,16 @@ from . import db
 from .models import BlogPosts
 
 def register_routes(main):
+    def serve_react_homepage():
+        return send_from_directory(main.static_folder, 'index.html')
+
     @main.route('/')
     def serve():
-        print(main.static_folder)
-        return send_from_directory(main.static_folder, 'index.html')
+        return serve_react_homepage()
+
+    @main.errorhandler(404)
+    def on_404(e):
+        return serve_react_homepage()
 
     @main.route('/blog-posts')
     def get_all_posts():
