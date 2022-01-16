@@ -269,7 +269,7 @@
 
 .Delete-button {
   position: absolute;
-  top: 1vh;
+  bottom: 1vh;
   left: 48vw;
   background-color: transparent;
   border-width: 0;

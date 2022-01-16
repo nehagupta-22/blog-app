@@ -62,8 +62,8 @@ function Posts ({posts_list, set_posts_list, mood}) {
                         onClick = {() => {close_post(postID)}}>
                   <a>&times; </a>
                 </button>
-                <button className = "Delete-button"
-                        className ="fa fa-trash"
+                <button className = "Close-button"
+                        className = "fa fa-trash"
                         onClick = {() => {fetch("/delete_post/" + postID, {
                             method: "DELETE"
                           })}}>
