@@ -3,7 +3,6 @@ import consumerism from "../components/images/consumerism.jpeg"
 import exercise from "../components/images/exercise.gif"
 import Neha from "../components/images/Neha.jpg"
 import sexism from "../components/images/sexism.jpg"
-import yay from "../components/images/yay.jpg"
 
 function Posts ({posts_list, set_posts_list, mood}) {
 
