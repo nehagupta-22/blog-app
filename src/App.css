@@ -268,9 +268,7 @@
 }
 
 .Delete-button {
-  position: absolute;
-  bottom: 1vh;
-  left: 45vw;
+  margin-left: 45vw;
   background-color: transparent;
   border-width: 0;
   font-size: 1.3em;
