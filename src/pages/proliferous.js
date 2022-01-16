@@ -32,7 +32,7 @@ export const AddPost = ({ onNewPost }) => {
 
         <div className = "Field">
         <label> Content: </label>
-        <input
+        <textarea
           value={content}
           onChange={event => setContent(event.target.value)}
         />
