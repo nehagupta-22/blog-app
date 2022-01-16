@@ -1,5 +1,9 @@
 import React, { useState } from "react";
-import yay from "../components/images/Neha.jpg"
+import consumerism from "../components/images/consumerism.jpeg"
+import exercise from "../components/images/consumerism.gif"
+import Neha from "../components/images/Neha.jpg"
+import sexism from "../components/images/sexism.jpg"
+import yay from "../components/images/yay.jpg"
 
 function Posts ({posts_list, set_posts_list, mood}) {
 
@@ -34,7 +38,7 @@ function Posts ({posts_list, set_posts_list, mood}) {
                  onClick = {() => {open_post(postID)}}>
             <a>
                 <div className = "Blurb-item">
-                    <img src = {yay} className = "Blurb-image"/>
+                    <img src = {{post.feature_image}} className = "Blurb-image"/>
                 </div>
                 <div className = "Blurb-item">
                     <div className = "Post-date"> {post.date} </div>
