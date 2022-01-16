@@ -25,6 +25,8 @@ function Sidebar () {
        <ul>
            <li><Link to = "/grumpy" onClick = {close}>grumpy me</Link></li>
            <li><Link to = "/robust" onClick = {close}>robust me</Link></li>
+           <li><Link to = "/pretentious" onClick = {close}>pretentious me</Link></li>
+           <li><Link to = "/pensive" onClick = {close}>pensive me</Link></li>
            <li><Link to = "/proliferous" onClick = {close}>proliferous me</Link></li>
        </ul>
     </div>
