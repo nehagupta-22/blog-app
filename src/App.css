@@ -255,7 +255,7 @@
 .Close-button {
   position: absolute;
   top: 1vh;
-  left: 49vw;
+  left: 45vw;
   background-color: transparent;
   border-width: 0;
   font-size: 1.5em;
@@ -269,7 +269,7 @@
 
 .Delete-button {
   position: absolute;
-  bottom: 13vh;
+  bottom: 1vh;
   left: 45vw;
   background-color: transparent;
   border-width: 0;
