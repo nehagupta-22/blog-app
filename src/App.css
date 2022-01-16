@@ -268,7 +268,7 @@
 }
 
 .Delete-button {
-  position: fixed;
+  position: relative;
   bottom: 1vh;
   left: 45vw;
   background-color: transparent;
