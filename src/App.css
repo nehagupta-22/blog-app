@@ -267,6 +267,21 @@
   cursor: pointer;
 }
 
+.Delete-button {
+  position: absolute;
+  top: 1vh;
+  left: 48vw;
+  background-color: transparent;
+  border-width: 0;
+  font-size: 1.5em;
+}
+
+.Delete-button a:hover {
+  font-size: 0.8em;
+  transition: all 0.1s ease;
+  cursor: pointer;
+}
+
 .Blurb a:hover{
   color: #db623d;
   cursor: pointer;
