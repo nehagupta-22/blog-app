@@ -23,6 +23,15 @@ function Posts ({posts_list, set_posts_list, mood}) {
     setPostOpened(false);
   };
 
+  function get_image_path(image_name){
+    const lookup = {
+      "sexism": sexism,
+      "consumerism": consumerism,
+      "exercise": exercise
+    }
+    return lookup[image_path]
+  }
+
   return (
     <div>
     {posts_list.map(post => {
@@ -36,8 +45,9 @@ function Posts ({posts_list, set_posts_list, mood}) {
                  onClick = {() => {open_post(postID)}}>
             <a>
                 <div className = "Blurb-item">
-
-                    <img src = {sexism} className = "Blurb-image"/>
+                    <img
+                    src = {get_image_path(post.feature_image)}
+                    className = "Blurb-image"/>
                 </div>
                 <div className = "Blurb-item">
                     <div className = "Post-date"> {post.date} </div>
