@@ -36,8 +36,9 @@ function Posts ({posts_list, set_posts_list, mood}) {
                  style = {{opacity: blurbOpacity}}
                  onClick = {() => {open_post(postID)}}>
             <a>
-                <div className = "Blurb-item">
-                    <img src = {String(post.feature_image)} className = "Blurb-image"/>
+                <div className = "Blurb-item">                  
+                    post.feature_image = sexism
+                    <img src = {post.feature_image} className = "Blurb-image"/>
                 </div>
                 <div className = "Blurb-item">
                     <div className = "Post-date"> {post.date} </div>
