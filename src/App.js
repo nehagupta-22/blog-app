@@ -9,7 +9,7 @@ import Home from './pages'
 import Sidebar from './components/sidebar'
 import Grumpy from './pages/grumpy';
 import Robust from './pages/robust';
-import Pensive from './pages/pensive';
+import Broody from './pages/broody';
 import Pretentious from './pages/pretentious';
 import { AddPost } from './pages/proliferous'
 
@@ -38,8 +38,8 @@ function App() {
             element={<Robust post_list = {posts} set_post_list = {setPosts}/>}>
             </Route>
 
-            <Route exact path='/pensive'
-            element={<Pensive post_list = {posts} set_post_list = {setPosts}/>}>
+            <Route exact path='/broody'
+            element={<Broody post_list = {posts} set_post_list = {setPosts}/>}>
             </Route>
 
             <Route exact path='/pretentious'
