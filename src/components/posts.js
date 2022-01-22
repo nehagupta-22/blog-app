@@ -3,6 +3,7 @@ import consumerism from "../components/images/consumerism.jpeg"
 import exercise from "../components/images/exercise.gif"
 import Neha from "../components/images/Neha.jpg"
 import sexism from "../components/images/sexism.jpg"
+import Card from 'react-bootstrap/Card'
 
 function Posts ({posts_list, set_posts_list, mood}) {
 
@@ -38,38 +39,15 @@ function Posts ({posts_list, set_posts_list, mood}) {
       const postID = String(post.id);
       if (post.mood == mood){
       return (
-        <div className = "Post" key = {post.id}>
-
-            <div className= "Blurb"
-                 style = {{opacity: blurbOpacity}}
-                 onClick = {() => {open_post(postID)}}>
-            <a>
-                <div className = "Blurb-item">
-                    <img
-                    src = {get_image_path(post.feature_image)}
-                    className = "Blurb-image"/>
-                </div>
-                <div className = "Blurb-item">
-                    <div className = "Post-date"> {post.date} </div>
-                    <h3> {post.title} </h3>
-                    <div className = "Info"> {post.content}</div>
-                </div>
-            </a>
-            </div>
-
-            <div className = "Expanded-Post" id = {postID}>
-                <button className = "Close-button"
-                        onClick = {() => {close_post(postID)}}>
-                  <a>&times; </a>
-                </button>
-
-                <h3> {post.title} </h3>
-                <div className = "Content">
-                    <p> {post.content}</p>
-                </div>
-            </div>
-
-        </div>
+        <Card style={{ width: '50rem' }}>
+          <Card.Img variant="top" src={get_image_path(post.feature_image)} />
+          <Card.Body>
+            <Card.Title as="<DivStyledAsH2>">{post.title}</Card.Title>
+            <Card.Text>
+              {post.content}
+            </Card.Text>
+          </Card.Body>
+        </Card>
       )}
         })}
       </div>)

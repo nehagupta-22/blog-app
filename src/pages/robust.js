@@ -16,8 +16,6 @@ function Robust({post_list, set_post_list}) {
        mood = "robust"
        />
 
-      <Header/>
-
    </div>
 
   )

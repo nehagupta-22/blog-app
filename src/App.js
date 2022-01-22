@@ -6,12 +6,12 @@ import {
     Route,
 } from 'react-router-dom';
 import Home from './pages'
-import Sidebar from './components/sidebar'
+import MySidebar from './components/sidebar';
 import Grumpy from './pages/grumpy';
 import Robust from './pages/robust';
 import Broody from './pages/broody';
-import Pretentious from './pages/pretentious';
-import { AddPost } from './pages/proliferous'
+import { AddPost } from './pages/proliferous';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const[posts, setPosts] = useState([]);
@@ -40,10 +40,6 @@ function App() {
 
             <Route exact path='/broody'
             element={<Broody post_list = {posts} set_post_list = {setPosts}/>}>
-            </Route>
-
-            <Route exact path='/pretentious'
-            element={<Pretentious post_list = {posts} set_post_list = {setPosts}/>}>
             </Route>
 
             <Route exact path='/proliferous'

@@ -1,10 +1,13 @@
 import React from 'react'
+import Image from 'react-bootstrap/Image'
+import background from "../components/images/coverpage.jpg"
 import '../App.css'
 
 function Home () {
   return (
     <div className = "Homepage" >
-        <div className= "Main bg-image">
+        <Image src={background} roundedCircle="true" />
+        <div className= "Main">
         <h1> moody me </h1>
         </div>
 

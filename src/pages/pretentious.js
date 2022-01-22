@@ -15,9 +15,6 @@ function Pretentious ({post_list, set_post_list}) {
        set_posts_list = {(data) => set_post_list(data)}
        mood = "pretentious"
        />
-
-        <Header />
-
    </div>
 
   )
