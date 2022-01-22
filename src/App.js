@@ -51,7 +51,7 @@ function App() {
 
         </Routes>
         <div className = "Sidebar-container">
-        <Sidebar />
+        <MySidebar />
         </div>
     </div>
     </Router>
