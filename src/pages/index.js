@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'react-bootstrap/Image'
-import background from "../components/images/coverpage.jpg"
+import background from "../components/images/coverpage.JPG"
 import '../App.css'
 
 function Home () {
