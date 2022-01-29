@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: #e69278;
+  background-color: white;
   font-size: calc(10px + 2vmin);
   font-family: "playfair display", serif;
   color: white;
@@ -18,20 +18,29 @@
   justify-content: center;
   display: flex;
   flex-direction: column;
+  margin: 0;
+}
+
+.Thumbnail {
+  position: relative;
+  top: -5vh;
 }
 
 .Main h1 {
   position: relative;
-  top: -20vh;
-  left: -12vh;
+  top: 0vh;
+  justify-content: center;
   font-size: 16vh;
   font-weight: normal;
   font-family: cursive;
+  color: #e69278;
 }
 
 .About {
   min-height: 20vh;
   margin: 0;
+  color: white;
+  background-color: #5a5a5a;
 }
 
 .About h2 {
@@ -44,6 +53,7 @@
   padding-right: 40vh;
   padding-left: 40vh;
   padding-bottom: 10vh;
+  margin-bottom: 0;
 }
 
 .bg-image {
@@ -91,7 +101,6 @@
   }
 
 .Sidebar a {
-  color: white;
   text-decoration: none;
 }
 
@@ -162,87 +171,28 @@
   margin-top: 30px;
   margin-left: 22vw;
   margin-right: 22vw;
-  margin-bottom: 0;
+  margin-bottom: 5vh;
   font-family: cursive;
   font-weight: normal;
   font-size: 0.7em;
   border-bottom-style: solid;
   border-bottom-width: thin;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
 }
 
 .Post {
   margin: 10vh;
 }
 
-.Blurb {
-  /*border-color: #ce7d64;*/
-  border-style: solid;
-  border-width: thin;
-  border-color: rgb(200, 200, 200);
-  margin: 3vw;
-  width: 70vw;
-  height: 27vw;
-  z-index: -1
+.Card-title {
+  font-size: 2em;
 }
 
-.Blurb-item{
-  position: relative;
-  float: left;
-  width: 50%;
-  height: 100%;
-  justify-content: left;
-}
-
-.Blurb-image {
-  height: 100%;
-  width: 100%;
-  vertical-align: bottom;
-  justify-content: left;
-}
-
-.Post-date {
-  text-align: left;
-  margin-left: 20px;
-  margin-top: 20px;
-  font-size: 0.5em;
-}
-
-.Blurb-item h3 {
-  margin-left: 20px;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  font-size: 0.9em;
-  text-align: left;
-}
-
-.Info {
-  height: 7em;
-  margin-left: 20px;
-  margin-right: 10px;
-  font-size: 0.6em;
-  text-align: left;
+.truncate {
+  width: [width];
+  white-space: nowrap;
   overflow: hidden;
-}
-
-.Expanded-Post {
-  display: none;
-  border-style: solid;
-  border-width: thin;
-  border-color: rgb(200, 200, 200);
-  width: 50vw;
-  height: 75vh;
-  overflow: scroll;
-  position: fixed;
-  left: 25vw;
-  top: 12vh;
-  background-color: #ffdcd0;
-  z-index: 1;
-}
-
-.Post-image {
-  width: 100%;
-  height: auto;
+  text-overflow: ellipsis;
 }
 
 .Content {

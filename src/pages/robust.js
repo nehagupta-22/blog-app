@@ -1,7 +1,5 @@
 import React from 'react'
-import '../App.css';
 import Posts from "../components/posts.js"
-import Header from "../components/header.js"
 
 function Robust({post_list, set_post_list}) {
 
@@ -15,9 +13,7 @@ function Robust({post_list, set_post_list}) {
        set_posts_list = {(data) => set_post_list(data)}
        mood = "robust"
        />
-
    </div>
-
   )
 }
 

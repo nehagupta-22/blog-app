@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Header from "../components/header"
 
 export const AddPost = ({ onNewPost }) => {
   const [title, setTitle] = useState("");

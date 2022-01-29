@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import consumerism from "../components/images/consumerism.jpeg"
-import exercise from "../components/images/exercise.gif"
-import Neha from "../components/images/Neha.jpg"
-import sexism from "../components/images/sexism.jpg"
+import clothes from "../components/images/clothes.jpg"
+import math from "../components/images/math.jpg"
+import shoes from "../components/images/shoes.jpeg"
+import wonderwoman from "../components/images/wonderwoman.jpeg"
 import Card from 'react-bootstrap/Card'
 
 function Posts ({posts_list, set_posts_list, mood}) {
@@ -26,28 +27,38 @@ function Posts ({posts_list, set_posts_list, mood}) {
 
   function get_image_path(image_name){
     const lookup = {
-      "sexism": sexism,
+      "math": math,
       "consumerism": consumerism,
-      "exercise": exercise
+      "clothes": clothes,
+      "shoes": shoes,
+      "wonderwoman": wonderwoman
     }
     return lookup[image_name];
   }
 
+   console.log(posts_list)
+
   return (
+
     <div>
     {posts_list.map(post => {
       const postID = String(post.id);
       if (post.mood == mood){
       return (
-        <Card style={{ width: '50rem' }}>
+        <div>
+        <Card
+        onClick = {() => {open_post(postID)}}
+        style={{ width: '30rem'}}>
           <Card.Img variant="top" src={get_image_path(post.feature_image)} />
           <Card.Body>
-            <Card.Title>{post.title}</Card.Title>
-            <Card.Text>
+            <Card.Title style = {{fontSize: '1.3rem', fontStyle: 'bold'}}>{post.title}</Card.Title>
+            <Card.Text style = {{fontSize: '1rem'}}>
               {post.content}
             </Card.Text>
           </Card.Body>
         </Card>
+        <br />
+        </div>
       )}
         })}
       </div>)
