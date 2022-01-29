@@ -27,6 +27,9 @@ function App() {
 
     <Router>
     <div className="App" >
+         <div className = "Sidebar-container">
+         <MySidebar />
+         </div>
         <Routes>
             <Route exact path='/' element={< Home/>}></Route>
 
@@ -50,9 +53,7 @@ function App() {
             </Route>
 
         </Routes>
-        <div className = "Sidebar-container">
-        <MySidebar />
-        </div>
+
     </div>
     </Router>
   );
