@@ -12,8 +12,8 @@ const MySidebar = ({ children }) => {
         <Nav className="me-auto">
            <Nav.Link href="/grumpy">grumpy me</Nav.Link>
            <Nav.Link href="/robust">robust me</Nav.Link>
-           <Nav.Link href="/pretentious">pretentious me</Nav.Link>
            <Nav.Link href="/pensive">pensive me</Nav.Link>
+           <Nav.Link href="/proliferous">pensive me</Nav.Link>
         </Nav>
       </Container>
    </Navbar>
