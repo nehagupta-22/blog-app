@@ -8,7 +8,7 @@ const MySidebar = ({ children }) => {
      <>
      <Navbar bg="dark" variant="dark">
         <Container>
-        <Navbar.Brand href="/" style = {{color: "#e69278"}}>Moody Me</Navbar.Brand>
+        <Navbar.Brand href="/" className = "Navbar-title">Moody Me</Navbar.Brand>
         <Nav className="me-auto">
            <Nav.Link href="/grumpy">grumpy me</Nav.Link>
            <Nav.Link href="/robust">robust me</Nav.Link>

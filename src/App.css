@@ -56,87 +56,8 @@
   margin-bottom: 0;
 }
 
-.bg-image {
-  /* Full height */
-  height: 100%;
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.Button {
-  background: transparent;
-  border: none;
-  font-size: 30px;
-  position: absolute;
-  top: 7px;
-  left: 1.5vw;
-  color: white;
-  position: fixed;
-}
-
-.Button a:hover {
-  font-size: 25px;
-  transition: all 0.1s ease;
-  cursor: pointer;
-}
-
-.Sidebar {
-    background: rgb(230,146, 120);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 210px;
-    height: 100vh;
-    display: none;
-    margin: 0;
-}
-
-.Sidebar li {
-    display: block;
-    padding: 13px 0px;
-    font-size: 23px;
-  }
-
-.Sidebar a {
-  text-decoration: none;
-}
-
-.Sidebar a:hover{
-  color: black;
-  cursor: pointer;
-  }
-
-.Sidebar ul {
-  position: absolute;
-  top: 11vh;
-  list-style-type: none;
-  margin: 0;
-}
-
-.Header {
-  position: fixed;
-  top: 0;
-  width: 100vw;
-  height: 60px;
-  background-color: #e69278;
-  color: white;
-  text-align: left;
-}
-
-.Header a {
-  position: fixed;
-  left: 100px;
-  top: 10px;
-  font-family: cursive;
-  text-decoration: none;
-  color: white;
-}
-
-.Header a:hover {
-  color: black;
+.Navbar-title {
+  color: #e69278;
 }
 
 .Mood-page {
