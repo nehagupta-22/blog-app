@@ -42,7 +42,7 @@ function Posts ({posts_list, set_posts_list, mood}) {
         <Card style={{ width: '50rem' }}>
           <Card.Img variant="top" src={get_image_path(post.feature_image)} />
           <Card.Body>
-            <Card.Title as="<DivStyledAsH2>">{post.title}</Card.Title>
+            <Card.Title>{post.title}</Card.Title>
             <Card.Text>
               {post.content}
             </Card.Text>
