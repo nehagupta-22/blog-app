@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import consumerism from "../components/images/consumerism.jpeg"
 import clothes from "../components/images/clothes.jpg"
 import math from "../components/images/math.jpg"
-import shoes from "../components/images/shoes.jpeg"
+import shoes from "../components/images/shoes.jpg"
 import wonderwoman from "../components/images/wonderwoman.jpeg"
 import Card from 'react-bootstrap/Card'
 

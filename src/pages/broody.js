@@ -1,6 +1,5 @@
 import React from 'react'
 import Posts from "../components/posts.js"
-import Header from "../components/header.js"
 
 function Broody({post_list, set_post_list}) {
 

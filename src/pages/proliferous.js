@@ -61,9 +61,7 @@ export const AddPost = ({ onNewPost }) => {
     }}
         />
         </div>
-
     </form>
-
     </div>
   );
 };
