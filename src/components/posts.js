@@ -36,8 +36,6 @@ function Posts ({posts_list, set_posts_list, mood}) {
     return lookup[image_name];
   }
 
-   console.log(posts_list)
-
   return (
 
     <div>
@@ -46,14 +44,12 @@ function Posts ({posts_list, set_posts_list, mood}) {
       if (post.mood == mood){
       return (
         <div>
-        <Card
-        onClick = {() => {open_post(postID)}}
-        style={{ width: '30rem'}}>
+        <Card style={{ width: '30rem'}}>
           <Card.Img variant="top" src={get_image_path(post.feature_image)} />
           <Card.Body>
             <Card.Title style = {{fontSize: '1.3rem', fontStyle: 'bold'}}>{post.title}</Card.Title>
-            <Card.Text style = {{fontSize: '1rem'}}>
-              {post.content}
+            <Card.Text style = {{fontSize: '1rem', whiteSpace: "pre-line" }}>
+              {post.content.split("<br/>").join("\n")}
             </Card.Text>
           </Card.Body>
         </Card>
