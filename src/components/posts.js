@@ -44,7 +44,7 @@ function Posts ({posts_list, set_posts_list, mood}) {
       if (post.mood == mood){
       return (
         <div>
-        <Card style={{ width: '30rem'}}>
+        <Card style={{ width: '35rem'}}>
           <Card.Img variant="top" src={get_image_path(post.feature_image)} />
           <Card.Body>
             <Card.Title style = {{fontSize: '1.3rem', fontStyle: 'bold'}}>{post.title}</Card.Title>

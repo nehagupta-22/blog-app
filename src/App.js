@@ -25,11 +25,12 @@ function App() {
 
   return (
 
-    <Router>
+
     <div className="App" >
          <div className = "Sidebar-container">
          <MySidebar />
          </div>
+        <Router>
         <Routes>
             <Route exact path='/' element={< Home/>}></Route>
 
@@ -53,9 +54,8 @@ function App() {
             </Route>
 
         </Routes>
-
-    </div>
-    </Router>
+        </Router>
+    </div>    
   );
 }
 

@@ -4,7 +4,6 @@
   font-size: calc(10px + 2vmin);
   font-family: "playfair display", serif;
   color: white;
-  margin: 0;
 }
 
 .Homepage {
@@ -161,6 +160,11 @@
 }
 
 .Field input {
-  border-color: #e69278;
+  border-color: #5a5a5a;
+  border-style: solid;
+}
+
+.Field textarea {
+  border-color: #5a5a5a;
   border-style: solid;
 }
