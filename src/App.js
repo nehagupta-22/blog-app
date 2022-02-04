@@ -25,7 +25,6 @@ function App() {
 
   return (
 
-
     <div className="App" >
          <div className = "Sidebar-container">
          <MySidebar />
@@ -55,7 +54,7 @@ function App() {
 
         </Routes>
         </Router>
-    </div>    
+    </div>
   );
 }
 
